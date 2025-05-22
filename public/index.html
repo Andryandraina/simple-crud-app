@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CRUD Application </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>User Management System</h1>
+            <p>Simple CRUD Operations with Node.js and PostgreSQL</p>
+            <p>By Azula </p>
+        </header>
+
+        <main>
+            <!-- Add User Form -->
+            <section class="form-section">
+                <h2 id="form-title">Add New User</h2>
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" id="submit-btn">Add User</button>
+                        <button type="button" id="cancel-btn" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Users List -->
+            <section class="users-section">
+                <h2>Users List</h2>
+                <div id="loading" class="loading">Loading users...</div>
+                <div id="error-message" class="error-message"></div>
+                <div id="users-container">
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-tbody">
+                            <!-- Users will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
